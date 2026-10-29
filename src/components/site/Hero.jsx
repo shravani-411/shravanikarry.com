@@ -26,7 +26,9 @@ export const Hero = () => (
     <div className="relative max-w-5xl mx-auto px-5 sm:px-8">
       <motion.p {...up(0.05)} className="text-base sm:text-lg font-medium text-[#6E6157]">Product Manager · Health Tech · {PROFILE.location}</motion.p>
       <motion.h1 {...up(0.15)} data-testid="hero-title" className="font-display mt-3 text-5xl sm:text-7xl lg:text-8xl font-medium tracking-[-0.03em] text-[#2B2420] leading-[1.02]">
-        Shravani <em className="italic text-[#26392E]">Karry</em>
+        <a data-testid="hero-linkedin-link" href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="hover:text-[#8B2E3C] transition-colors">
+          Shravani <em className="italic text-[#26392E]">Karry</em>
+        </a>
       </motion.h1>
       <motion.p {...up(0.3)} data-testid="hero-intro" className="mt-6 mx-auto max-w-3xl text-xl sm:text-3xl leading-snug text-[#4A3F38]">{PROFILE.intro}</motion.p>
       <motion.p {...up(0.4)} data-testid="hero-journey" className="font-display italic mt-4 mx-auto max-w-2xl text-lg sm:text-2xl text-[#8B2E3C]">{PROFILE.journey}</motion.p>

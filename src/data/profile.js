@@ -4,7 +4,7 @@ export const PROFILE = {
   email: "shravani.kvnks@gmail.com",
   phone: "+91 99624 37235",
   phoneHref: "tel:+919962437235",
-  linkedin: "https://www.linkedin.com/search/results/all/?keywords=Shravani%20Karry",
+  linkedin: "https://www.linkedin.com/in/shrash/",
   location: "Bengaluru, India",
   cv: "/Shravani-Karry-CV.pdf",
   intro: "I build products that simplify people's lives and genuinely make them better.",
