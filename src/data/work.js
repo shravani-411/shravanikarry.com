@@ -44,7 +44,7 @@ export const WORK = [
   {
     id: "trade-in", cat: "growth", name: "Trade-in", when: "Relaunched Feb 2026", featured: true, tone: "dark", fit: "cover",
     img: "/img/uh/pro-battery.webp", metric: "13%", metricLabel: "of web ring orders",
-    screens: s("ring-pro-buy-1"),
+    screens: [...s("ring-pro-buy-1"), "/img/screens/trade-in-0.png"],
     line: "Old-device credit at checkout.",
     did: ["Credit at checkout", "Serial verification", "Instant refund", "Carried into the Ring PRO pre-order and five more markets"],
     result: "13% of web ring orders since the February relaunch, 25% in launch month.",
