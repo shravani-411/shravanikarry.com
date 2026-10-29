@@ -138,26 +138,6 @@ export const WORK = [
     result: "Region-aware campaigns across three billing rails, with a clean switch-off after a price-display bug.",
   },
   {
-    id: "canada-retail", cat: "capability", name: "Canada retail partners", when: "Best Buy · Costco · Staples", metric: "2 yr", metricLabel: "warranty override",
-    line: "Retail rings get the same promise as web rings.",
-    did: ["Two-year warranty override", "Membership card flow for retail buyers"],
-    result: "Retail buyers in Canada get warranty and membership on par with web.",
-  },
-  {
-    id: "clue", cat: "partner", name: "Clue Plus", when: "Cycle tracking", metric: "3", metricLabel: "flows shipped",
-    screens: s("clue-0"),
-    line: "A subscription sold through our store.",
-    did: ["Store listing", "Voucher flow", "Regional pricing"],
-    result: "Used the first run to reset the relaunch around in-app placement and revenue share.",
-  },
-  {
-    id: "luminary", cat: "partner", name: "Luminary", when: "Since Aug 2026", metric: "5", metricLabel: "products on the US store",
-    screens: s("luminary-0", "luminary-1"),
-    line: "Women's-health supplements, resold on the US store.",
-    did: ["Five products listed", "FDA-claims compliance", "Storefront code shipped by me"],
-    result: "Five products live on the US store.",
-  },
-  {
     id: "battery", cat: "hardware", name: "Battery and firmware", when: "Device experience", metric: "25%", metricLabel: "replacement rate above 40°C",
     line: "Fix the cause instead of replacing rings.",
     did: ["Charger-swap program with in-app alerts", "Rewrote Ring PRO setup after a protective film caused dead-on-arrival claims", "Visible tape added at the factory"],

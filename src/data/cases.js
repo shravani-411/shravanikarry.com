@@ -76,4 +76,14 @@ export const CASES = {
     solution: "For companies, invoiced gifting by card, ACH or wire, released only when funds settle, with sizing-kit bundles priced in volume bands. For individuals, a gift card the sender can schedule to arrive at a chosen time, and the recipient picks their own size and colour.",
     result: "In build, not yet live.",
   },
+  battery: {
+    problem: "Ring AIR replacements were climbing. Digging into the returns, the top three or four causes shared a root: battery temperature. Above 40°C the charger overheated and stopped working, so members asked for a new charger, lost patience, and often sent the whole ring back instead.",
+    solution: "Detect it before the member does. When a ring reports a high charge temperature, the app tells them so and a replacement charger ships proactively, before the charger dies and before the complaint. Ring PRO setup was rewritten after a protective film caused dead-on-arrival claims, and visible tape was added at the factory so the film gets removed.",
+    result: "Charger swaps replaced ring replacements for the 25% of returns above 40°C, which cut replacement cost and refunds together.",
+  },
+  "canada-doa": {
+    problem: "Refunds through Canadian retail partners were high, and the main reason was rings that never worked out of the box. Two thirds of six weeks of retail orders had never connected, and not one of those buyers had contacted support. They returned the ring to the store instead.",
+    solution: "A dead-on-arrival ring can be spotted from the app alone: setup events that never complete and ring-health scores that never appear. Detection runs on those signals, a push goes out within an hour, and banners in the app point the member to support with a recovery flow instead of a refund desk.",
+    result: "Recovery flows reached the first 214 members.",
+  },
 };
