@@ -8,10 +8,6 @@ const Stop = ({ s, i }) => (
     <p className="text-sm font-medium text-[#6E6157]">{s.period} · {s.role}</p>
     <h3 className="font-display mt-1 text-3xl sm:text-5xl font-medium italic tracking-[-0.02em] text-[#2B2420]">{s.word}</h3>
     <p className="mt-3 text-lg sm:text-xl text-[#4A3F38] max-w-xl leading-snug">{s.line}</p>
-    <p className="mt-4 inline-flex items-baseline gap-2 rounded-full bg-[#EFE6D6] px-4 py-1.5">
-      <span className="font-display text-xl font-semibold text-[#2B2420]">{s.number}</span>
-      <span className="text-sm text-[#6E6157]">{s.numberLabel}</span>
-    </p>
   </FadeIn>
 );
 

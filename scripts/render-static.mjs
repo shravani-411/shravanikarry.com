@@ -1,0 +1,14 @@
+import { createServer } from "vite";
+import React from "react";
+import { renderToString } from "react-dom/server";
+import fs from "node:fs";
+import path from "node:path";
+const root = process.argv[2], out = process.argv[3];
+const server = await createServer({ root, server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
+const { default: App } = await server.ssrLoadModule("/src/App.jsx");
+let html = renderToString(React.createElement(App));
+html = html.replace(/ style="opacity:0;?[^"]*"/g, "").replace(/ style="[^"]*transform:[^"]*"/g, "");
+const css = fs.readdirSync(path.join(root, "dist/assets")).filter(f => f.endsWith(".css")).map(f => fs.readFileSync(path.join(root, "dist/assets", f), "utf8")).join("\n");
+fs.writeFileSync(out, `<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet"><base href="http://localhost:4173/"><style>${css}</style></head><body><div id="root">${html}</div></body></html>`);
+await server.close();
+console.log("ok", html.length);

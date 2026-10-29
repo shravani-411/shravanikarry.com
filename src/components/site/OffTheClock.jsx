@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { BookOpen, Mic2, PenTool, Footprints } from "lucide-react";
 import { FadeIn, SectionTitle } from "./FadeIn";
-import { HOBBIES } from "../../data/profile";
+import { HOBBIES, ORIGIN } from "../../data/profile";
 
 const ICONS = { reading: BookOpen, singing: Mic2, sketching: PenTool, moving: Footprints };
 
@@ -9,6 +9,9 @@ export const OffTheClock = () => (
   <section id="off-the-clock" data-testid="off-the-clock-section" className="bg-[#EFE6D6] py-24 sm:py-32">
     <div className="max-w-6xl mx-auto px-5 sm:px-8">
       <SectionTitle sub="What keeps me curious and happy outside work.">Off the clock.</SectionTitle>
+      <FadeIn className="-mt-4 sm:-mt-6 mb-12 sm:mb-16">
+        <p data-testid="off-the-clock-origin" className="text-lg sm:text-xl text-[#4A3F38] max-w-2xl leading-snug">{ORIGIN}</p>
+      </FadeIn>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {HOBBIES.map((h, i) => {
           const Icon = ICONS[h.id];
