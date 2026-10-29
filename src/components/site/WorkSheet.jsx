@@ -8,7 +8,7 @@ const Gallery = ({ work }) => {
   const go = (d) => ref.current?.scrollBy({ left: d * ref.current.clientWidth * 0.85, behavior: "smooth" });
   const btn = "hidden sm:grid absolute top-1/2 -translate-y-1/2 w-10 h-10 place-items-center rounded-full bg-[#F8F3EA]/90 shadow-md text-[#2B2420] hover:bg-[#F8F3EA] transition-colors";
   return (
-    <div className="relative mt-6">
+    <div className="relative mt-3">
       <div ref={ref} className="-mx-6 sm:-mx-10 px-6 sm:px-10 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 [scrollbar-width:none]" data-testid="work-screens">
         {work.screens.map((src, i) => (
           <img key={src} src={src} alt={`${work.name} screen ${i + 1}`} className={`snap-center shrink-0 ${work.portrait ? "h-[60vh] sm:h-[68vh] w-auto" : work.screens.length > 1 ? "w-[88%] h-auto max-h-[68vh]" : "w-full h-auto max-h-[68vh]"} object-contain object-top rounded-2xl border border-black/5 bg-[#EFE6D6]`} />
@@ -74,16 +74,18 @@ export const Details = ({ work }) => CASES[work.id] ? <CaseStudy c={CASES[work.i
 
 const Screens = ({ work }) => (
   <div className="p-6 sm:p-10">
-    <DialogTitle className="text-2xl sm:text-3xl font-semibold tracking-[-0.03em]">{work.name}</DialogTitle>
-    <DialogDescription className="sr-only">Product screens for {work.name}</DialogDescription>
-    {work.screens.length ? <Gallery work={work} /> : (
-      <div data-testid="work-screens-empty" className="mt-6 h-64 rounded-2xl bg-[#EFE6D6] grid place-items-center text-[#6E6157]">Screens coming soon</div>
-    )}
-    <div className="mt-8 flex items-baseline gap-3 flex-wrap">
+    <p className="text-sm font-medium text-[#6E6157]">{work.when}</p>
+    <DialogTitle className="mt-1 text-2xl sm:text-3xl font-semibold tracking-[-0.03em]">{work.name}</DialogTitle>
+    <DialogDescription className="sr-only">Case study and product screens for {work.name}</DialogDescription>
+    <div className="mt-6 flex items-baseline gap-3 flex-wrap">
       <span className="text-5xl font-semibold tracking-[-0.04em] text-[#2B2420]">{work.metric}</span>
       <span className="text-base text-[#6E6157]">{work.metricLabel}</span>
     </div>
     <div className="max-w-3xl"><Details work={work} /></div>
+    <h4 className="mt-10 text-sm font-semibold text-[#2B2420]">Screens</h4>
+    {work.screens.length ? <Gallery work={work} /> : (
+      <div data-testid="work-screens-empty" className="mt-6 h-64 rounded-2xl bg-[#EFE6D6] grid place-items-center text-[#6E6157]">Screens coming soon</div>
+    )}
   </div>
 );
 
