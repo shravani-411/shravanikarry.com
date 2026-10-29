@@ -20,8 +20,8 @@ export const Nav = () => {
               {label}
             </button>
           ))}
-          <a data-testid="nav-download-cv" href={PROFILE.cv} download className="text-xs font-medium text-white bg-[#8B2E3C] hover:bg-[#74242F] rounded-full px-3.5 py-1.5 transition-colors">
-            Download CV
+          <a data-testid="nav-download-cv" href={PROFILE.cv} target="_blank" rel="noreferrer" className="text-xs font-medium text-white bg-[#8B2E3C] hover:bg-[#74242F] rounded-full px-3.5 py-1.5 transition-colors">
+            View CV
           </a>
         </nav>
         <button data-testid="nav-mobile-toggle" className="md:hidden text-[#2B2420]" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -33,7 +33,7 @@ export const Nav = () => {
           {LINKS.map(([id, label]) => (
             <button key={id} data-testid={`nav-mobile-${id}`} onClick={() => go(id)} className="text-left text-2xl font-semibold text-[#2B2420]">{label}</button>
           ))}
-          <a data-testid="nav-mobile-download-cv" href={PROFILE.cv} download className="mt-2 w-fit text-sm font-medium text-white bg-[#8B2E3C] rounded-full px-5 py-2.5">Download CV</a>
+          <a data-testid="nav-mobile-download-cv" href={PROFILE.cv} target="_blank" rel="noreferrer" className="mt-2 w-fit text-sm font-medium text-white bg-[#8B2E3C] rounded-full px-5 py-2.5">View CV</a>
         </div>
       )}
     </header>

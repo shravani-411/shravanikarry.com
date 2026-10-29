@@ -33,8 +33,8 @@ export const Hero = () => (
       <motion.p {...up(0.3)} data-testid="hero-intro" className="mt-6 mx-auto max-w-3xl text-xl sm:text-3xl leading-snug text-[#4A3F38]">{PROFILE.intro}</motion.p>
       <motion.p {...up(0.4)} data-testid="hero-journey" className="mt-4 mx-auto max-w-3xl text-xl sm:text-3xl leading-snug text-[#4A3F38]">{PROFILE.journey}</motion.p>
       <motion.div {...up(0.55)} className="mt-9 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-        <a data-testid="hero-download-cv-button" href={PROFILE.cv} download className="rounded-full bg-[#8B2E3C] hover:bg-[#74242F] text-[#F8F3EA] text-base px-6 py-3 transition-colors">
-          Download CV
+        <a data-testid="hero-download-cv-button" href={PROFILE.cv} target="_blank" rel="noreferrer" className="rounded-full bg-[#8B2E3C] hover:bg-[#74242F] text-[#F8F3EA] text-base px-6 py-3 transition-colors">
+          View CV
         </a>
         <button data-testid="hero-see-story-button" onClick={() => scrollToId("story")} className="group inline-flex items-center gap-1 text-base sm:text-lg text-[#26392E] hover:underline">
           Read my story <ChevronRight size={18} className="transition-transform group-hover:translate-x-0.5" />

@@ -26,7 +26,7 @@ export const Contact = () => {
         <FadeIn className="text-center">
           <h2 className="text-5xl sm:text-7xl font-semibold tracking-[-0.04em] text-[#2B2420]">Let&apos;s talk.</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a data-testid="contact-download-cv" href={PROFILE.cv} download className="rounded-full bg-[#8B2E3C] hover:bg-[#74242F] text-white text-base px-6 py-3 transition-colors">Download CV</a>
+            <a data-testid="contact-download-cv" href={PROFILE.cv} target="_blank" rel="noreferrer" className="rounded-full bg-[#8B2E3C] hover:bg-[#74242F] text-white text-base px-6 py-3 transition-colors">View CV</a>
             <button data-testid="contact-copy-email" onClick={copy} className="rounded-full border border-[#8B2E3C] text-[#8B2E3C] hover:bg-[#8B2E3C]/5 text-base px-6 py-3 transition-colors">
               {copied ? "Copied" : "Copy email"}
             </button>

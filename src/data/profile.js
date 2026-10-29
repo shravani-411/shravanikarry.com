@@ -6,7 +6,7 @@ export const PROFILE = {
   phoneHref: "tel:+919962437235",
   linkedin: "https://www.linkedin.com/in/shrash/",
   location: "Bengaluru, India",
-  cv: "/Shravani-Karry-CV.pdf",
+  cv: "/Shravanis-product-resume.pdf",
   intro: "I build products that simplify people's lives and genuinely make them better.",
   journey: "I have told the story, run the machine, and now I build the thing.",
 };
