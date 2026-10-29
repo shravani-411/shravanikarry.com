@@ -19,6 +19,9 @@ export const Story = () => (
         <h2 className="font-display mt-3 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.03em] text-[#2B2420] leading-[1.05]">
           Jack of all trades, by choice. Curiosity never killed this cat. It just kept changing her job title.
         </h2>
+        <p data-testid="story-team" className="mt-6 max-w-2xl text-lg sm:text-xl text-[#4A3F38] leading-snug">
+          A team wins when every person on it does. I build teams that way.
+        </p>
       </FadeIn>
       <div className="relative mt-14 sm:mt-20">
         <span aria-hidden="true" className="absolute left-[9px] sm:left-[11px] top-2 bottom-2 w-px bg-[#2B2420]/15" />
