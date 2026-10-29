@@ -8,7 +8,7 @@ export const PROFILE = {
   location: "Bengaluru, India",
   cv: "/Shravani-Karry-CV.pdf",
   intro: "I build products that simplify people's lives and genuinely make them better.",
-  journey: "I wanted to try everything a company does. Product is where I stayed.",
+  journey: "I have told the story, run the machine, and now I build the thing.",
 };
 
 export const STORY = [
