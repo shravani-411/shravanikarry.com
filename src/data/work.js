@@ -126,10 +126,10 @@ export const WORK = [
     result: "The purchase-code API pattern now serves every retail distributor.",
   },
   {
-    id: "gifting", cat: "capability", name: "Gifting", when: "Diwali 2026", metric: "4", metricLabel: "ways to gift",
+    id: "gifting", cat: "capability", name: "Gifting", when: "In build", metric: "4", metricLabel: "ways to gift",
     line: "Gift flows for individuals and companies.",
     did: ["Invoiced gifting by card, ACH or wire, released when funds settle", "Corporate sizing-kit bundles in volume bands", "Gift vouchers with bonus value for bulk buyers", "Gift ring cards: the recipient picks size and colour"],
-    result: "Live for Diwali 2026.",
+    result: "In build, not yet live.",
   },
   {
     id: "in-app", cat: "growth", name: "In-app journeys", when: "Ongoing", metric: "3", metricLabel: "billing rails",

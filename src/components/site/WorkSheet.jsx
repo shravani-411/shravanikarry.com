@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "../ui/dialog";
+import { CASES } from "../../data/cases";
 
 const Gallery = ({ work }) => {
   const ref = useRef(null);
@@ -23,6 +24,54 @@ const Gallery = ({ work }) => {
   );
 };
 
+const H = ({ children }) => <h4 className="mt-8 text-sm font-semibold text-[#2B2420]">{children}</h4>;
+const P = ({ children }) => <p className="mt-3 text-base text-[#4A3F38] leading-relaxed">{children}</p>;
+
+const CaseStudy = ({ c }) => {
+  const paras = Array.isArray(c.solution) ? c.solution : [c.solution];
+  return (
+    <div data-testid="work-case">
+      <H>Problem</H>
+      <P>{c.problem}</P>
+      {c.requirement && (<><H>Business requirement</H><P>{c.requirement}</P></>)}
+      {c.others && (<><H>What everyone else built</H><P>{c.others}</P></>)}
+      <H>Product solution</H>
+      {paras.map((t) => <P key={t}>{t}</P>)}
+      {c.points && (
+        <ul className="mt-3 space-y-2.5">
+          {c.points.map((pt) => (
+            <li key={pt.lead} className="flex gap-3 text-base text-[#4A3F38] leading-relaxed">
+              <span className="mt-2.5 h-1 w-1 rounded-full bg-[#2B2420] shrink-0" />
+              <span><span className="font-semibold text-[#2B2420]">{pt.lead}</span> {pt.text}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      {c.after && <P>{c.after}</P>}
+      <H>Result</H>
+      <P>{c.result}</P>
+    </div>
+  );
+};
+
+const Did = ({ work }) => (
+  <>
+    <H>What I did</H>
+    <ul className="mt-3 space-y-2.5">
+      {work.did.map((d) => (
+        <li key={d} className="flex gap-3 text-base text-[#4A3F38] leading-relaxed">
+          <span className="mt-2.5 h-1 w-1 rounded-full bg-[#2B2420] shrink-0" />
+          <span>{d}</span>
+        </li>
+      ))}
+    </ul>
+    <H>Result</H>
+    <P>{work.result}</P>
+  </>
+);
+
+export const Details = ({ work }) => CASES[work.id] ? <CaseStudy c={CASES[work.id]} /> : <Did work={work} />;
+
 const Screens = ({ work }) => (
   <div className="p-6 sm:p-10">
     <DialogTitle className="text-2xl sm:text-3xl font-semibold tracking-[-0.03em]">{work.name}</DialogTitle>
@@ -30,6 +79,11 @@ const Screens = ({ work }) => (
     {work.screens.length ? <Gallery work={work} /> : (
       <div data-testid="work-screens-empty" className="mt-6 h-64 rounded-2xl bg-[#EFE6D6] grid place-items-center text-[#6E6157]">Screens coming soon</div>
     )}
+    <div className="mt-8 flex items-baseline gap-3 flex-wrap">
+      <span className="text-5xl font-semibold tracking-[-0.04em] text-[#2B2420]">{work.metric}</span>
+      <span className="text-base text-[#6E6157]">{work.metricLabel}</span>
+    </div>
+    <div className="max-w-3xl"><Details work={work} /></div>
   </div>
 );
 
@@ -53,17 +107,7 @@ export const WorkSheet = ({ work, onClose }) => (
                 <span className="text-base text-[#6E6157]">{work.metricLabel}</span>
               </div>
             </DialogDescription>
-            <h4 className="mt-8 text-sm font-semibold text-[#2B2420]">What I did</h4>
-            <ul className="mt-3 space-y-2.5">
-              {work.did.map((d) => (
-                <li key={d} className="flex gap-3 text-base text-[#4A3F38] leading-relaxed">
-                  <span className="mt-2.5 h-1 w-1 rounded-full bg-[#2B2420] shrink-0" />
-                  <span>{d}</span>
-                </li>
-              ))}
-            </ul>
-            <h4 className="mt-8 text-sm font-semibold text-[#2B2420]">Result</h4>
-            <p className="mt-3 text-base text-[#4A3F38] leading-relaxed">{work.result}</p>
+            <Details work={work} />
           </div>
         </>
       )}
