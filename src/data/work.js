@@ -82,7 +82,7 @@ export const WORK = [
   },
   {
     id: "speedy-delivery", cat: "growth", name: "2-hour and 4-hour delivery", when: "India · UAE", metric: "45%", metricLabel: "of India web ring orders",
-    screens: ["/img/screens/delivery-0.png"],
+    screens: ["/img/screens/delivery-0.png", "/img/screens/delivery-1.png"],
     line: "Fast delivery slots on the India and UAE stores.",
     did: ["India: two-hour slots from kiosks in four cities, live ETA, WhatsApp updates", "UAE: built in a day for a creator launch, 4-hour slots in Dubai", "Fixed a fulfilment push that held orders for four hours"],
     result: "Chosen by 45% of India web ring orders since launch (479 of 1,075).",
