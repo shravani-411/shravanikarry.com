@@ -76,6 +76,7 @@ export const WORK = [
   },
   {
     id: "referral", cat: "capability", name: "Referral program rebuild", when: "13 months", metric: "3%", metricLabel: "of ring orders",
+    portrait: true, screens: ["/img/screens/referral-0.jpg", "/img/screens/referral-1.png"],
     line: "A five-step reward ladder for 580K ring owners.",
     did: ["Five-step ladder replacing a single reward", "Migration rules and fraud checks", "Six-stage funnel"],
     result: "About 3% of ring orders over 13 months.",
