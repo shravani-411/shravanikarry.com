@@ -61,11 +61,6 @@ export const CASES = {
     solution: "Two-hour delivery from local kiosks in those cities. A pin-code check on the pricing page tells the buyer whether they qualify before they add to cart. The order confirmation email, the tracking page and WhatsApp updates all follow the two-hour promise with a live ETA, so the experience is consistent from pricing page to doorstep. The UAE version was built in a day for a creator launch, with four-hour slots in Dubai. Along the way I found and fixed a fulfilment push that was quietly holding orders for four hours.",
     result: "Chosen by 45% of India web ring orders since launch, 479 of 1,075.",
   },
-  referral: {
-    problem: "580K ring owners and a referral program with one reward at the end. Refer five friends, get a ring. Nobody felt progress before the fifth, so most stopped at one.",
-    solution: "A five-step ladder with a reward at every rung, front-loaded with the highest perceived value so momentum starts early. Separate ladders for members who already owned the final reward. Migration rules for existing referrers: progress carried over, no retroactive payouts, so the people at four of five became the hottest leads on day one. Fraud checks for same-address and same-payment clusters. A six-stage funnel to see where referrals died.",
-    result: "About 3% of ring orders over 13 months.",
-  },
   birthday: {
     problem: "A birthday is the one day a member expects a brand to notice, and we did nothing.",
     solution: "A personal birthday page on any storefront with 15% off, live for two weeks. The discount switches off after that, the page stays up, so no link in an email ever dies.",
@@ -85,5 +80,31 @@ export const CASES = {
     problem: "Refunds through Canadian retail partners were high, and the main reason was rings that never worked out of the box. Two thirds of six weeks of retail orders had never connected, and not one of those buyers had contacted support. They returned the ring to the store instead.",
     solution: "A dead-on-arrival ring can be spotted from the app alone: setup events that never complete and ring-health scores that never appear. Detection runs on those signals, a push goes out within an hour, and banners in the app point the member to support with a recovery flow instead of a refund desk.",
     result: "Recovery flows reached the first 214 members.",
+  },
+  "best-buy": {
+    problem: "Best Buy held a lot of Ring PRO stock and we wanted it sold through, not sitting on shelves. The fastest buyer in the US is on our own site, so the answer was to route our direct orders through Best Buy: buy on ultrahuman.com, collect from the store down the road the same day.",
+    solution: [
+      "A pickup option on the pricing page, with a store picker fed by Best Buy's live shelf stock, and the same choice carried onto the product card so the two never disagree. Checkout with no shipping address. Forty pickup variants added to all 16,000 live discount codes so no code breaks. Pickup-ready emails and a store map on the order-tracking page.",
+      "Most of the work was the edge cases. A buyer ordering two rings when the store has one. Stock that shows on the picker and is gone by the time the order lands. Best Buy never confirming stock at all, or coming back out of stock after the order. Cancellation and refund rules were agreed with Best Buy for every one of those paths before a single order could go through.",
+    ],
+    result: "In build, not yet live. 118 of 311 stores and 14 of 32 sizes ready for day one. Coming to the app after web.",
+  },
+  "verified-id": {
+    problem: "We wanted to do something for the people on the front line, military, first responders, healthcare workers, teachers, and the people who push the limits of the body, athletes, scientists, researchers. Every competitor already had a heroes discount, so the business wanted one too, if only to stand level.",
+    solution: [
+      "The verification companies would not work with a brand our size at the time, so version one was our own. Every order came in first, we asked for documents, and the 15% went out once the documents checked out. Slow, manual, and it proved the demand.",
+      "Then GovX and ID.me came on board as the authentication layer. They verify military, first responders, healthcare and education, and the discounted price shows the moment a person is verified. The manual route still runs today for athletes, scientists and researchers, because no verification service covers them and nothing beats a document check.",
+    ],
+    result: "About 5% of US ring orders, at an order value about 7% above other US orders.",
+  },
+  referral: {
+    problem: "Version one of referrals was a flat 10% off and a single reward at the end of five. It did a steady number and no more. The business wanted more revenue from every surface of the app, and we had a shelf of newer products, the PowerPlugs, that most of 580K ring owners had never tried.",
+    solution: "A five-step ladder with a reward at every rung, and the rewards are the products themselves: PowerPlug subscriptions that add value for as long as the member keeps the ring. The strongest rewards sit at rung two and rung five, borrowed from game design, so there is an early win that proves the ladder is real and a prize at the top worth the climb. Separate ladders for members who already owned the final reward. Migration rules for existing referrers: progress carried over, no retroactive payouts, so the people at four of five became the hottest leads on day one. Fraud checks for same-address and same-payment clusters. A six-stage funnel to see where referrals died.",
+    result: "About 3% of ring orders over 13 months.",
+  },
+  "native-currency": {
+    problem: "A buyer in Toronto or Sydney saw a price in US dollars, guessed at the conversion, and paid a foreign-transaction fee on top. Eleven markets were being asked to buy in someone else's money, and it showed in the numbers.",
+    solution: "Added AUD, CAD, SAR, MXN, ZAR and JPY so the pricing page and checkout show the local price in the local currency, and moved each country onto the right store entity so tax, invoicing and settlement line up with where the buyer lives.",
+    result: "Daily purchases up about 100% in Canada and Australia in the first weeks.",
   },
 };

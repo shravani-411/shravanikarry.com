@@ -56,10 +56,10 @@ export const WORK = [
     result: "5,393 orders across 88 countries in its first run.",
   },
   {
-    id: "best-buy", cat: "capability", name: "Best Buy in-store pickup", when: "Oct 2026", metric: "38%", metricLabel: "of Best Buy stores live on day one",
+    id: "best-buy", cat: "capability", name: "Best Buy in-store pickup", when: "In build", metric: "38%", metricLabel: "of Best Buy stores ready for day one",
     line: "Buy Ring PRO online, pick it up the same day at Best Buy.",
     did: ["Store picker fed by live shelf stock", "Checkout with no shipping address; 40 pickup variants added to all 16,000 live discount codes", "Pickup-ready emails and store map on order tracking", "Cancellation and refund rules agreed with Best Buy"],
-    result: "118 of 311 stores and 14 of 32 sizes on day one. Coming to the app next.",
+    result: "In build, not yet live. 118 of 311 stores and 14 of 32 sizes ready for day one.",
   },
   {
     id: "betterhelp", cat: "partner", name: "BetterHelp", when: "Feb — Oct 2026", featured: true, tone: "light", portrait: true, img: "/img/screens/bh-1686.webp", screens: s("bh-1686", "bh-1687", "bh-1688"), metric: "590", metricLabel: "paid therapy sign-ups",
