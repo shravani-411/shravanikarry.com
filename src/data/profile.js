@@ -31,10 +31,10 @@ export const STORY = [
 
 export const ORIGIN = "I hail from Visakhapatnam and grew up between Chennai and Mumbai, which is my excuse for bragging about how many languages I speak.";
 export const HOBBIES = [
+  { id: "moving", name: "Moving", line: "I lift heavy for a woman and average for a man. I am learning to love running, for my heart. If I am not doing one of the other three, I am at the gym.", tone: "bg-[#F8F3EA] text-[#2B2420]" },
   { id: "reading", name: "Reading", line: "Thrillers, horror, stoicism, astrophysics, and true crime about serial killers.", tone: "bg-[#26392E] text-[#F8F3EA]" },
   { id: "singing", name: "Singing", line: "I listen to everything from Carnatic to death metal. When I sing, only the Carnatic gets any justice.", tone: "bg-[#8B2E3C] text-[#F8F3EA]" },
   { id: "sketching", name: "Sketching", line: "Scenes, sceneries, whatever is in front of me. My father designs structures for a living, so the instinct was inherited.", tone: "bg-[#D4A24C] text-[#2B2420]" },
-  { id: "moving", name: "Moving", line: "Gym, running, and an active lifestyle.", tone: "bg-[#F8F3EA] text-[#2B2420]" },
 ];
 
 export const HIGHLIGHTS = [
