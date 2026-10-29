@@ -98,7 +98,7 @@ export const CASES = {
     result: "About 5% of US ring orders, at an order value about 7% above other US orders.",
   },
   referral: {
-    problem: "Version one of referrals was a flat 10% off and a single reward at the end of five. It did a steady number and no more. The business wanted more revenue from every surface of the app, and we had a shelf of newer products, the PowerPlugs, that most of 580K ring owners had never tried.",
+    problem: "Version one of referrals was a flat 10% off and a single reward at the end of five. It brought in a steady $30K to $40K a month and no more. The business wanted more revenue from every surface of the app, and we had a shelf of newer products, the PowerPlugs, that most of 580K ring owners had never tried.",
     solution: "A five-step ladder with a reward at every rung, and the rewards are the products themselves: PowerPlug subscriptions that add value for as long as the member keeps the ring. The strongest rewards sit at rung two and rung five, borrowed from game design, so there is an early win that proves the ladder is real and a prize at the top worth the climb. Separate ladders for members who already owned the final reward. Migration rules for existing referrers: progress carried over, no retroactive payouts, so the people at four of five became the hottest leads on day one. Fraud checks for same-address and same-payment clusters. A six-stage funnel to see where referrals died.",
     result: "About 3% of ring orders over 13 months.",
   },
