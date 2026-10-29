@@ -17,7 +17,7 @@ export const Story = () => (
       <FadeIn>
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2E3C]">My story</p>
         <h2 className="font-display mt-3 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.03em] text-[#2B2420] leading-[1.05]">
-          I wanted to do everything that's possible across a company.
+          Jack of all trades, by choice. Curiosity never killed this cat. It just kept changing her job title.
         </h2>
       </FadeIn>
       <div className="relative mt-14 sm:mt-20">
