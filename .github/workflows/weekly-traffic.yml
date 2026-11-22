@@ -1,0 +1,31 @@
+name: Weekly traffic report
+
+on:
+  schedule:
+    - cron: "0 14 * * 1" # Mondays 14:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build report
+        env:
+          GA_PROPERTY_ID: ${{ vars.GA_PROPERTY_ID }}
+          GA_SA_KEY: ${{ secrets.GA_SA_KEY }}
+        run: node scripts/weekly-traffic.mjs > report.md
+      - name: Post report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+          gh label create traffic-report --color 0E8A16 --description "Weekly GA4 report" 2>/dev/null || true
+          gh issue create --title "Traffic report: week ending $(date -u -d yesterday +%Y-%m-%d)" --body-file report.md --label traffic-report
