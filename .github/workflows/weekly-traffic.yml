@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   issues: write
+  id-token: write # keyless Google login via GitHub OIDC
 
 jobs:
   report:
@@ -17,10 +18,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - id: auth
+        name: Sign in to Google (no key)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_SA_EMAIL }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/analytics.readonly
       - name: Build report
         env:
           GA_PROPERTY_ID: ${{ vars.GA_PROPERTY_ID }}
-          GA_SA_KEY: ${{ secrets.GA_SA_KEY }}
+          GA_ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
         run: node scripts/weekly-traffic.mjs > report.md
       - name: Post report
         env:

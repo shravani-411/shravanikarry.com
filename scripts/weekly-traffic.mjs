@@ -1,12 +1,14 @@
 // Weekly GA4 traffic report. No dependencies (Node 20+).
-// Env: GA_PROPERTY_ID (numeric property ID), GA_SA_KEY (service account JSON).
+// Env: GA_PROPERTY_ID (numeric property ID), plus either GA_ACCESS_TOKEN
+// (OAuth token with analytics.readonly, e.g. from keyless GitHub OIDC login)
+// or GA_SA_KEY (service account JSON key).
 // Prints a Markdown report comparing the last 7 days with the 7 days before.
 import crypto from "node:crypto";
 
 const propertyId = process.env.GA_PROPERTY_ID;
 const key = JSON.parse(process.env.GA_SA_KEY || "null");
-if (!propertyId || !key) {
-  console.error("Set GA_PROPERTY_ID and GA_SA_KEY.");
+if (!propertyId || !(process.env.GA_ACCESS_TOKEN || key)) {
+  console.error("Set GA_PROPERTY_ID and either GA_ACCESS_TOKEN or GA_SA_KEY.");
   process.exit(1);
 }
 
@@ -35,7 +37,7 @@ async function getToken() {
   return (await res.json()).access_token;
 }
 
-const token = await getToken();
+const token = process.env.GA_ACCESS_TOKEN || await getToken();
 const THIS = { startDate: "7daysAgo", endDate: "yesterday" };
 const PREV = { startDate: "14daysAgo", endDate: "8daysAgo" };
 
